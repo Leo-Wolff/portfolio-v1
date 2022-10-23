@@ -1,0 +1,496 @@
+/* *************
+COVER
+************* */
+
+header h1 {
+    position: absolute;
+    top: 270px;
+    left: 500px;
+}
+
+#img-home {
+    position: absolute;
+    top: 68px;
+    left: 16px;
+}
+
+
+
+/* *************
+INTRODUCTIE - CAROUSEL
+************* */
+
+section:nth-of-type(1) {
+    display: flex;
+
+    position: absolute;
+    top: 483px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 811px;
+    height: 260px;
+}
+
+section:nth-of-type(1) h3 {
+    width: calc(779px - 16px);
+
+    text-align: right;
+}
+
+#carousel {
+    overflow: hidden;
+
+    width: 811px;
+    height: 260px;
+}
+
+#slide {
+    display: flex;
+    gap: 16px;
+
+    width: 500%;
+    height: 500px;
+}
+
+#slide input {
+    display: none;
+}
+
+.carousel-item {
+    width: 20%;
+
+    transition: 2s;
+}
+
+.carousel-item div {
+    width: calc(779px - 16px); /*min de flex gap*/
+    height: 260px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    
+    margin-top: 260px;
+    
+    width: 779px;
+}
+
+.btn {
+    margin-right: 30px;
+
+    border: 1px solid var(--opal);
+    border-radius: 10px;
+
+    padding: 5px;
+    
+    cursor: pointer;
+
+    transition: 50ms;
+}
+
+.btn:hover {
+    outline: 2px solid var(--opal);
+}
+
+#radio1:checked ~.first {
+    margin-left: 0;
+}
+
+#radio2:checked ~.first {
+    margin-left: -20%;
+}
+#radio3:checked ~.first {
+    margin-left: -40%;
+}
+
+#radio1:checked ~ #buttons label:nth-of-type(1) {
+    background-color: var(--opal);
+
+    transition: 0.5s;
+}
+
+#radio2:checked ~ #buttons label:nth-of-type(2) {
+    background-color: var(--opal);
+
+    transition: 0.5s;
+}
+
+#radio3:checked ~ #buttons label:nth-of-type(3) {
+    background-color: var(--opal);
+
+    transition: 0.5s;
+} 
+
+
+
+/* *************
+MIJN TROTS
+************* */
+
+section:nth-of-type(2) {
+    position: absolute;
+    top: calc(750px + (96px * 2));
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 824px;
+}
+
+section:nth-of-type(2) div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 128px;
+
+    margin-top: 64px;
+}
+
+section:nth-of-type(2) div a {
+    justify-self: center;
+
+    position: relative;
+
+    border-radius: 10px;
+
+    width: 256px;
+    height: 256px;
+}
+
+section:nth-of-type(2) div a img {
+    border-radius: 10px;
+}
+
+section:nth-of-type(2) div a p {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    width:224px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* states */
+
+section:nth-of-type(2) div a:hover {
+    scale: 1.25;
+
+    outline: solid 7.5px var(--opal);
+
+    transition: outline 100ms linear 75ms;
+    transition-duration: 100ms;
+}
+
+section:nth-of-type(2) div a:active {
+    scale: 1;
+
+    outline: solid 7.5px var(--cedar-chest);
+
+    transition-duration: 100ms;
+}
+
+
+
+/* *************
+CONTACT
+************* */
+
+section:nth-of-type(3) {
+    position: absolute;
+    top: calc((1643px + 96px) + (96px * 2));
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 824px;
+}
+
+section:nth-of-type(3) h2 {
+    margin: 0 600px 0 -1000px;
+
+    padding: 5px 33px 5px 1000px;
+
+    text-align: right;
+}
+
+section:nth-of-type(3) div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    margin-top: 64px;
+
+    text-align: center;
+}
+
+section:nth-of-type(3) div img {
+    width: 128px;
+}
+
+/* states */
+
+section:nth-of-type(3) div img:hover {
+    scale: 1.25;
+    
+    transition-duration: 100ms;
+}
+
+section:nth-of-type(3) div img:active {
+    scale: 1;
+    
+    transition-duration: 100ms;
+}
+
+
+
+/* *************
+MEDIA QUERIES
+************* */
+
+@media screen and (max-width: 995px) {
+    header h1 {
+        top: 310px;
+        left: 450px;
+    }
+}
+
+
+
+@media screen and (max-width: 829px) {
+
+    /* COVER */
+
+    header h1 {
+        top: 220px;
+        left: 320px;
+    }
+
+    #img-home {
+        width: 267.5px;
+    }
+
+    /* INTRODUCTIE - CAROUSEL */
+
+    section:nth-of-type(1) {
+        top: 326px;
+    
+        width: 558px;
+    }
+    
+    section:nth-of-type(1) h3 {
+        width: calc(558px - 32px);
+
+        margin-bottom: -10px;
+    }
+    
+    .carousel-item div {
+        width: calc(558px - 16px); /*min de flex gap*/
+    }
+    
+    #buttons {             
+        width: 558px;
+    }
+
+    /* MIJN TROTS */
+
+    section:nth-of-type(2) {
+        top: calc(570px + (96px * 2));
+    
+        width: 558px;
+    }
+    
+    section:nth-of-type(2) div {
+        column-gap: 32px;
+    }
+    
+    section:nth-of-type(2) div a:hover {
+        scale: 1.125;
+    }
+
+    /* CONTACT */
+
+    section:nth-of-type(3) {
+        top: calc(1512px + (96px * 2));
+
+        width: 558px;
+    }
+
+    section:nth-of-type(3) h2 {
+        margin-right: 447px;
+    }
+
+    section:nth-of-type(3) div img {
+        width: 64px;
+    }
+
+    section:nth-of-type(3) div b {
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 599px) {
+    
+    /* COVER */
+
+    header h1 {
+        top: 240px;
+        left: 300px;
+    }
+
+    /* INTRODUCTIE - CAROUSEL */
+
+    section:nth-of-type(1) {
+        top: 326px;
+    
+        width: 407px;
+    }
+    
+    section:nth-of-type(1) h3 {
+        width: calc(407px - 32px);
+    }
+    
+    .carousel-item div {
+        width: calc(407px - 16px); /*min de flex gap*/
+    }
+    
+    #buttons {
+        margin-top: 276px;
+        
+        width: 407px;
+    }
+
+    /* MIJN TROTS */
+
+    section:nth-of-type(2) {
+        top: calc(620px + (96px * 2));
+    
+        width: 407px;
+    }
+    
+    section:nth-of-type(2) div {
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTACT */
+
+    section:nth-of-type(3) {
+        top: calc(2338px + (96px * 2));
+
+        width: 407px;
+    }
+
+    section:nth-of-type(3) h2 {
+        margin-right: 295px;
+    }
+
+    section:nth-of-type(3) div {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+}
+
+
+
+@media screen and (max-width: 525px) {
+    
+    /* COVER */
+
+    header h1 {
+        top: 300px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 235px;
+    }
+
+    #img-home {
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 256px;
+    }
+
+    /* INTRODUCTIE - CAROUSEL */
+
+    section:nth-of-type(1) {
+        top: 382px;
+    
+        width: 288px;
+        height: 400px;
+    }
+    
+    section:nth-of-type(1) h3 {
+        width: calc(288px - 32px);
+
+        margin-bottom: -10px;
+    }
+    
+    #carousel {
+        height: 400px;
+    }
+
+    #slide {
+        gap: 8px;
+    }
+    
+    .carousel-item div {
+        width: calc(288px - 16px); /*min de flex gap*/
+    }
+    
+    #buttons {     
+        margin-top: 400px;
+        
+        width: 288px;
+    }
+
+    /* MIJN TROTS */
+
+    section:nth-of-type(2) {
+        top: calc(800px + (96px * 2));
+    
+        width: 288px;
+    }
+    
+    section:nth-of-type(2) div {
+        row-gap:64px;
+    }
+
+    section:nth-of-type(2) div a, section:nth-of-type(2) div a img {
+        width: 192px;
+        height: 192px;
+    }
+
+    section:nth-of-type(2) div a p {
+        width: 168px;
+    }
+
+    /* CONTACT */
+
+    section:nth-of-type(3) {
+        top: calc(2060px + (96px * 2));
+
+        width: 288px;
+    }
+
+    section:nth-of-type(3) h2 {
+        margin-right: 177px;
+    }
+}

@@ -1,0 +1,174 @@
+/* *************
+HEADER
+************* */
+
+.cover {
+    width: 100%;
+    height: 384px;
+
+    object-fit: cover;
+}
+
+header h1 {
+    position: absolute;
+    top: calc(271px - 64px);
+
+    width:100%;
+
+    font-family: var(--text-font-main);
+    font-size: 72px;
+    
+    text-align: center;
+}
+
+
+
+/* *************
+ARTIKEL
+************* */
+
+article {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: 64px;
+    column-gap: 30px;
+
+    position: absolute;
+    top: calc(405px + 64px);
+    left: 50%;
+    
+    transform: translateX(-50%);
+
+    width: 779px;
+}
+
+article h3 {
+    margin-bottom: -10px;
+
+    font-size: 36px;
+}
+
+article section img {
+    margin-top:16px;
+
+    width: 64px;
+    height: 64px;
+}
+
+/* states */
+
+article section img:hover {
+    transform: scale(1.25);
+
+    transition: 200ms;
+}
+
+article section img:active {
+    transform: scale(1);
+
+    transition: 200ms;
+}
+
+/* rechter kolom */
+
+article section:nth-of-type(1), article section:nth-of-type(3), article section:nth-of-type(4) {
+    grid-row-end: span 1;
+    grid-column-start: 2;
+}
+
+article section:nth-of-type(2) {
+    grid-row-end: 1;
+    grid-column-start: 1;
+}
+
+article section:nth-of-type(2) p:last-of-type {
+    margin-bottom: 96px;
+}
+
+article section:nth-of-type(3) {
+    margin-top: 314px;
+}
+
+article section:nth-of-type(4) {
+    margin-top: calc(347px + 64px);
+}
+
+
+
+/* *************
+MEDIA QUERIES
+************* */
+
+@media screen and (max-width: 829px) {
+    header h1 {
+        top: calc(347px - 64px);
+        font-size: 48px;
+    }
+
+    article {
+        display: inline-block;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 558px;
+    }
+
+    article h3 {
+        margin: 0;
+    }
+
+    section, article section:nth-of-type(2) p:last-of-type, article section:nth-of-type(3), article section:nth-of-type(4) {
+        margin: 0;
+
+        padding: 0;
+    }
+
+    article section:nth-of-type(2) h3:first-of-type, article section:nth-of-type(3) h3 {
+        text-align: right;
+    }
+
+    article section, article section:nth-of-type(2) p:first-of-type {
+        margin-bottom: 64px;
+    }
+
+    article section:last-of-type {
+        margin: calc(-24px + 64px) 0 96px 0;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .cover {
+        height: 256px;
+    }
+
+    header h1 {
+        top: calc(235px - 64px);
+
+        font-size: 42px;
+    }
+
+    article {
+        top: calc(295px + 64px);
+
+        width: 407px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .cover {
+        height: 128px;
+    }
+
+    header h1 {
+        top: calc(100px - 16px);
+        
+        font-size: 28px;
+    }
+
+    article {
+        top: calc(167px + 64px);
+
+        width: 288px;
+    }
+}
